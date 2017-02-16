@@ -13,7 +13,6 @@ public class Juego
     private Mazo mazo;
     private int paloQuePinta;
 
-
     /**
      * Constructor de la clase Juego
      *
@@ -55,11 +54,10 @@ public class Juego
             System.out.println(jugadores[i].getNombre());
         }
         System.out.println();
-        
+
         jugar();
     }
-    
-    
+
     /**
      * Método que reparte 5 cartas a cada uno de los jugadores presentes en
      * la partida y elige un palo para que pinte.
@@ -96,8 +94,6 @@ public class Juego
 
         return paloQuePinta;           
     }
-   
-
 
     /**
      * Devuelve la posición del jugador cuyo nombre se especifica como
@@ -106,12 +102,18 @@ public class Juego
      * @param nombre El nombre del jugador a buscar
      * @return La posición del jugador buscado o -1 en caso de no hallarlo.
      */
-    private int encontrarPosicionJugadorPorNombre(String nombre)
+    public int encontrarPosicionJugadorPorNombre(String nombre)
     {
-        
+        int posicion=-1;
+
+        for (int cont=0;cont<jugadores.length;cont++){
+            if (nombre.equals(jugadores[cont].getNombre())){
+                posicion=cont;
+            }
+        }
+        return posicion;
     }
-    
-        
+
     /**
      * Desarrolla una partida de julepe teniendo en cuenta que el mazo y los
      * jugadores ya han sido creados. 
@@ -138,19 +140,7 @@ public class Juego
     private void jugar()
     {
 
-        
     }    
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
